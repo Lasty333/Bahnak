@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-align: center;
 }
 
 /* Základní styly pro tělo stránky */
@@ -16,12 +17,48 @@ body {
     scroll-behavior: smooth; /* Plynulé scrollování */
     font-size: 18px; /* Zvýšení základní velikosti textu */
 }
-img {
+.obrazek {
     margin-top: 20px;
     clip-path: circle(260px);
 }
 
+/* Styl pro ikony sociálních sítí */
+.social-icons {
+    display: flex;
+    justify-content: center; /* Zarovnání ikon na střed */
+    margin-top: 20px;
+}
 
+.social-icon {
+    margin: 0 15px; /* Vzdálenost mezi ikonami */
+    transition: transform 0.3s ease;
+}
+
+.social-icon-img {
+    width: 50px; /* Velikost ikony */
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon-img:hover {
+    transform: scale(1.1); /* Efekt zvětšení při najetí myší */
+}
+
+.vsechno {
+    transition: transform 0.3s ease;
+}
+.vsechno:hover {
+    transform: scale(1.03);
+}
+.vsechno a {
+    border-radius: 30px;
+    padding: 13px;
+    background-color: #ac711a;
+}
+.vsechno a:hover{
+    color: #f4f4f4;
+    background-color: #333;
+}
 
 /* Styly pro hlavičku a navigaci */
 header {
@@ -143,6 +180,102 @@ header nav ul li a:hover {
     .menu-toggle:checked + .hamburger div:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px); /* Efekt kříže */
     }
+
+    /*Formular telefon*/
+    .formular {
+        padding: 15px 10px;
+    }
+
+    .formular h3 {
+        font-size: 28px;
+    }
+
+    .formular input,
+    .formular textarea,
+    .formular button {
+        font-size: 16px; /* Mírné zmenšení písma pro mobilní verze */
+    }
+    .social-icon-img {
+        margin-left: 9px;
+    }
+}
+
+/* Styl pro formulář */
+.formular {
+    background-color: #333; /* Tmavé pozadí pro formulář */
+    padding: 30px 25px; /* Menší padding pro kompaktnější formulář */
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    max-width: 500px; /* Zmenšení šířky formuláře pro desktop */
+    margin: 35px auto; /* Zarovnání formuláře na střed */
+}
+
+/* Nadpis formuláře */
+.formular h3 {
+    color: #ff9900; /* Oranžová barva pro nadpis */
+    font-size: 28px; /* Mírně menší nadpis */
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Labely pro formulář */
+.formular label {
+    display: block;
+    color: #f0f0f0; /* Světlý text pro label */
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Vstupy a textarea */
+.formular input,
+.formular textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #444;
+    color: #f0f0f0;
+    font-size: 16px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Při focusu na input nebo textarea */
+.formular input:focus,
+.formular textarea:focus {
+    border-color: #ff9900; /* Oranžová barva při focusu */
+    background-color: #555;
+    outline: none;
+}
+
+/* Textarea - výška a resize */
+.formular textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Tlačítko odeslání */
+.formular button {
+    background-color: #ff9900; /* Oranžová barva tlačítka */
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+}
+
+/* Efekt hover pro tlačítko */
+.formular button:hover {
+    background-color: #ff7f00; /* Sytější oranžová */
+    transform: translateY(-2px);
+}
+
+.formular button:active {
+    transform: translateY(0);
 }
 
 /* Úprava pro hlavní obsah stránky */
@@ -172,7 +305,7 @@ main {
     color: #d0d0d0; /* Světlejší text pro lepší čitelnost */
 }
 .domu {
-    transition: transform 0.5s ease;
+    transition: transform 0.4s ease;
 }
 
 .domu:hover {
