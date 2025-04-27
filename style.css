@@ -1,0 +1,296 @@
+/* Reset některých výchozích stylů pro konzistenci */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Základní styly pro tělo stránky */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #212121; /* Tmavě šedé pozadí */
+    color: #f0f0f0; /* Světlý text pro kontrast */
+    line-height: 1.6;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    scroll-behavior: smooth; /* Plynulé scrollování */
+    font-size: 18px; /* Zvýšení základní velikosti textu */
+}
+img {
+    margin-top: 20px;
+    clip-path: circle(260px);
+}
+
+
+
+/* Styly pro hlavičku a navigaci */
+header {
+    background-color: #1a1a1a; /* Tmavě šedé pozadí */
+    padding: 30px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Jemný stín pod hlavičkou */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0 30px; /* Zvýšení vzdálenosti mezi odkazy */
+}
+
+header nav ul li a {
+    color: #f4f4f4; /* Světlý text */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px; /* Zvýšení velikosti písma v navigaci */
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 5px 0;
+}
+
+header nav ul li a:hover {
+    color: #ff9900; /* Oranžová při hoveru */
+    transform: translateY(-3px); /* Drobný efekt pohybu při hoveru */
+}
+
+/* Hamburger menu (mobilní verze) */
+.hamburger {
+    display: none; /* Skrytí hamburger ikony na desktopu */
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+}
+
+.hamburger div {
+    background-color: #f4f4f4;
+    height: 4px;
+    width: 30px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+/* Skrytí checkboxu (neviditelný) */
+.menu-toggle {
+    display: none;
+}
+
+/* Úpravy pro mobilní zobrazení */
+@media (max-width: 768px) {
+    header nav ul {
+        display: none; /* Skrytí navigace na mobilních zařízeních */
+        flex-direction: column;
+        width: 100%;
+        background-color: #1a1a1a; /* Tmavé pozadí pro mobilní menu */
+        position: absolute;
+        top: 80px; /* Mezera pro fixní hlavičku */
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    header nav ul li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    header nav ul li a {
+        font-size: 22px; /* Zvýšení velikosti písma v mobilní verzi */
+    }
+    h1, h2, h3 {
+        font-size: 24px;
+    }
+    img {
+        width: 100%;
+        clip-path: circle(160px);
+    }
+
+    /* Zobrazení hamburger menu na mobilních zařízeních */
+    header .hamburger {
+        display: flex; 
+        margin-right: 260px;
+    }
+    p {
+        line-height: 1.5em;
+        font-size: 15px;
+    }
+    /* Aktivní stav pro navigaci po kliknutí na hamburger */
+    .menu-toggle:checked + .hamburger + nav ul {
+        display: flex; /* Zobrazení menu po kliknutí na hamburger */
+    }
+
+    /* Animace pro hamburger ikonu při otevření menu */
+    .menu-toggle:checked + .hamburger div:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px); /* Efekt kříže */
+    }
+
+    .menu-toggle:checked + .hamburger div:nth-child(2) {
+        opacity: 0; /* Skrytí prostřední čáry */
+    }
+
+    .menu-toggle:checked + .hamburger div:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px); /* Efekt kříže */
+    }
+}
+
+/* Úprava pro hlavní obsah stránky */
+main {
+    padding-top: 80px; /* Vytvoření mezery pro fixní navigaci */
+}
+
+/* Úvodní stránka - Domů */
+#home {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #333; /* Tmavé pozadí pro úvodní sekci */
+    border-radius: 8px;
+    margin: 0 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    margin-top: 80px; /* Zajištění prostoru pro fixní navigaci */
+}
+
+#home h1 {
+    color: #ff9900; /* Oranžový text pro nadpis */
+    font-size: 48px; /* Zvýšení velikosti nadpisu */
+    margin-bottom: 20px;
+}
+
+#home p {
+    font-size: 22px; /* Zvýšení velikosti textu */
+    color: #d0d0d0; /* Světlejší text pro lepší čitelnost */
+}
+.domu {
+    transition: transform 0.5s ease;
+}
+
+.domu:hover {
+    transform: scale(1.01);
+}
+
+/* O nás */
+#about {
+    background-color: #424242; /* Tmavě šedé pozadí */
+    border-radius: 8px;
+    padding: 60px 20px;
+    margin: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    padding-top: 80px; /* Přidání prostoru nad nadpisem */
+}
+
+#about h2 {
+    color: #ff9900;
+    font-size: 36px; /* Zvýšení velikosti nadpisu */
+    margin-bottom: 20px;
+}
+
+#about p {
+    color: #c0c0c0;
+    font-size: 20px; /* Zvýšení velikosti textu */
+    line-height: 1.8;
+}
+
+/* Naše služby */
+#services {
+    background-color: #333;
+    padding: 60px 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    padding-top: 80px; /* Přidání prostoru nad nadpisem */
+}
+
+#services h2 {
+    color: #ff9900;
+    font-size: 36px; /* Zvýšení velikosti nadpisu */
+    margin-bottom: 20px;
+}
+
+#services ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#services ul li {
+    color: #ccc;
+    font-size: 20px; /* Zvýšení velikosti textu */
+    margin-bottom: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#services ul li:hover {
+    color: #ff9900; /* Oranžová při hoveru */
+    cursor: pointer;
+    transform: translateX(5px); /* Drobný efekt posunu při hoveru */
+}
+
+/* Kontakt */
+#contact {
+    background-color: #424242;
+    padding: 60px 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    padding-top: 80px; /* Přidání prostoru nad nadpisem */
+}
+
+#contact h2 {
+    color: #ff9900;
+    font-size: 36px; /* Zvýšení velikosti nadpisu */
+    margin-bottom: 20px;
+}
+
+#contact p {
+    color: #d0d0d0;
+    font-size: 20px; /* Zvýšení velikosti textu */
+    line-height: 1.8;
+}
+
+address {
+    color: #c0c0c0;
+    font-style: normal;
+    font-size: 20px; /* Zvýšení velikosti textu */
+    line-height: 1.8;
+}
+
+a {
+    color: #ff9900;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #f4f4f4;
+}
+
+/* Zápatí */
+footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+    padding: 40px 0; /* Zvýšení paddingu pro větší zápatí */
+    text-align: center;
+    margin-top: 40px;
+    font-size: 16px; /* Zvýšení velikosti textu v patičce */
+}
+
+footer a {
+    color: #ff9900;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #f4f4f4;
+}
+
